@@ -53,6 +53,7 @@ dek_split <- initial_split(dek_v8)
 dek_train <- training(dek_split)
 dek_test <- testing(dek_split)
 
+#Visualization
 #selling_price
 ggplot(dek_train, aes(x=selling_price)) +
   geom_histogram(bins=200) +
@@ -309,6 +310,8 @@ cor(dek_train1$km_driven, dek_train1$seats) #27.7% positive correlation
 cor(dek_train1$fuel_econ, dek_train1$seats) #48.3% negative correlation
 
 #Evaluate fit of Model 7
+par(mfrow=c(2,2))
 plot(fit7)
+par(mfrow=c(1,1))
 
 #next step as of 19Nov21: remove outliers as identified by Res vs Fitted and Leverage plots
